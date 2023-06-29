@@ -2,6 +2,7 @@ const fs = require("fs");
 const inquirer= require("inquirer");
 const {Triangle, Circle, Square} = require("./lib/shapes.js");
 
+// function used to generate .svg file
 function writeToFile(fileName, answers) {
     let svgString = "";
     svgString = '<svg version="1.1" xlmns="http://w3.or/2000/svg" width="300" height="200">';
@@ -29,6 +30,7 @@ function writeToFile(fileName, answers) {
     });
 }
 
+// prompts users for input in command line
 function promptUser() {
     inquirer.prompt([
             {
@@ -55,9 +57,11 @@ function promptUser() {
 
         ])
         .then((answers) => {
+            // creates prompt if input is longer than allowed
             if (answers.text.length > 3) {
                 console.log("Text entered must be no more than 3 characters");
                 promptUser();
+            // if the character prompt is satisfied, logo is generated
             } else {
                 writeToFile("logo.svg", answers);
             }
