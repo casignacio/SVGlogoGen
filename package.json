@@ -75,5 +75,8 @@
   "bugs": {
     "url": "https://github.com/casignacio/SVGlogoGen/issues"
   },
-  "homepage": "https://github.com/casignacio/SVGlogoGen#readme"
+  "homepage": "https://github.com/casignacio/SVGlogoGen#readme",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
 }
